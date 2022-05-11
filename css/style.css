@@ -1,0 +1,849 @@
+/* Box Model Hack */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  /* font-size: 16px; */
+}
+h1, h2 {
+  font-family: 'Abril Fatface', sans-serif;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* WRAPPER */
+
+.page-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.nav-wrapper {
+  width: 100%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.grad-bar {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  height: 50px;
+  overflow: hidden;
+}
+
+.navbar img {
+  height: 60px;
+  width: auto;
+  justify-self: start;
+  margin-left: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  justify-self: end;
+  
+}
+
+.nav-item a {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+
+.nav-item a:hover {
+  color: rgb(239, 142, 52);
+}
+
+/* SEARCH FUNCTION */
+#search-icon {
+  font-size: 1rem;
+  margin-top: 3px;
+  margin-left: 15px;
+  transition: color 0.3s ease-out;
+}
+
+#search-icon:hover {
+  color: rgb(239, 142, 52);
+  cursor: pointer;
+}
+
+.search {
+  transform: translate(-25%);
+  -webkit-transform: translate(-25%);
+  transition: transform 0.7s ease-in-out;
+  color: rgb(239, 142, 52);
+}
+
+.no-search {
+  transform: translate(0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.search-input {
+  position: absolute;
+  top: -4px;
+  right: -120px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+}
+
+.search-active {
+  opacity: 1;
+  z-index: 0;
+}
+
+input {
+  border: 0;
+  border-left: 1px solid #ccc;
+  border-radius: 0; /* FOR SAFARI */
+  outline: 0;
+  padding: 5px;
+}
+
+/* MOBILE MENU & ANIMATION */
+
+.menu-toggle .bar{
+  width: 25px;
+  height: 3px;
+  background-color: rgb(239, 142, 52);
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+  justify-self: end;
+  margin-right: 25px;
+  display: none;
+}
+
+.menu-toggle:hover{
+  cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2){
+  opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1){
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3){
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/********** SECTIONS *********/
+main {
+  height: 800px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(./assets/image1.jpeg);
+  background-size: cover;
+  background-position: 70% 30%;
+  background-repeat: no-repeat;
+}
+.mainSection {
+  margin: 0 0 0 100px;
+  padding-top: 200px;
+  font-size: 1.5rem;
+}
+.aboutSection {
+  height: 350px;
+  padding: 30px 400px 0 600px;
+  background-color:rgb(254, 216, 177);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(./assets/amala-cover.png);
+  background-size: cover;
+  background-position: middle;
+  background-repeat: no-repeat;
+}
+
+.cuisineSection {
+  height: 1000px;
+  padding: 30px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.fourCuisine,
+.fourCuisine2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.fourCuisine {
+  padding-bottom: 20px;
+}
+.cuisineSection .food-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.openingSection {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+  flex-direction: column;
+  height: 1000px;
+  align-content: center;
+  background-color:rgb(254, 216, 177);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(./assets/amala-cover.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+}
+
+/* HEADINGS */
+.mainSection h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  /* padding-right: 1100px; */
+}
+.aboutSection h2 {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+.aboutSection h3 {
+  padding: 40px 0 10px 0;
+  font-size: 2rem;
+  color: rgb(239, 142, 52);
+}
+.cuisineSection h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+.cuisineSection h3 {
+  text-align: center;
+  padding: 20px 0;
+  color: rgb(239, 142, 52);
+  font-size: 2rem;
+}
+#cuisineDiv h3,  #cuisineDiv h2 {
+  text-align: center;
+}
+
+.openingSection h4, 
+.openingSection h2 {
+  text-align: center;
+  padding-top: 10px;
+}
+.openingSection h2 {
+  font-size: 3rem;
+  padding: 10px 0 20px 0;
+}
+.bookTable,
+.telNum {
+  color: rgb(239, 142, 52);
+  align-self: center;
+  font-size: 1.8rem;
+}
+/* h4 */
+.testimonials .testHeading {
+  color: rgb(239, 142, 52);
+  text-align: center;
+  font-size: 1.8rem;
+}
+.testimonials h2 {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 20px;
+}
+.testimonials h4 {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+.testimonials h5 {
+  color: rgb(239, 142, 52);
+  text-align: center;
+  padding: 0 0 20px 0;
+  font-size: 1.5rem;
+}
+
+/* PARAGRAPHS */
+.aboutSection p {
+  padding: 10px 100px 0 0;
+  font-size: 1.5rem;
+}
+.openingSection .hours {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+}
+.hours div {
+  align-self: center;
+  text-align: left;
+  padding: 10px 180px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.testimonials p {
+  padding: 10px 220px 20px 220px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+/* NAVIGATIONS IN SECTIONS */
+.mainSection ul {
+  list-style: none;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+}
+.mainSection ul li {
+  display: flex;
+  margin-right: 25px;
+  font-size: 1.5rem;
+}
+
+.mainSection ul li i {
+  padding-right: 10px;
+}
+
+.cuisineNav ul {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+.cuisineNav li {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.5rem; 
+}
+.cuisineNav ul a {
+  color: black;
+  text-decoration: none;
+}
+.cuisineNav ul a:hover {
+  color: rgb(239, 142, 52);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(239, 142, 52);
+}
+
+/* SEARCH FORM */
+form input {
+  height: 40px;
+  width: 20%;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+/* BUTTONS */
+button {
+  color: black;
+  padding: 10px 10px;
+  font-size: 1.5rem;
+}
+.click-buttons {
+  background: rgb(239, 142, 52);
+  border-radius: 2rem;
+  font-size: 2rem;
+}
+.mainSection .click-buttons {
+  border-radius: 0;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  margin-left: -5px;
+}
+.aboutSection .click-buttons,
+.cuisineSection .click-buttons {
+  margin: 20px 0;
+}
+#cuisineDiv .click-buttons {
+  align-self: center;
+  margin-top: -70px;
+}
+
+/* ICONS */
+.fa-brands, .fa-bars, 
+.fa-phone, .fa-stars {
+  padding: 0 10px 10px 0;
+  color: rgb(239, 142, 52);
+  font-size: 1.5rem;
+}
+.fa-phone {
+  border: 1px solid rgb(239, 142, 52);
+  border-radius: 50%;
+  align-self: center;
+  padding: 10px;
+}
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* IMAGES */
+.cuisineFood img {
+  height: 350px;
+  width: 400px;
+  padding: 0 10px;
+  /* z-index: 0; */
+}
+.testimonials img {
+  width: 200px;
+  border-radius: 50%;
+  align-self:center;
+}
+
+/* VIDEO */
+.openingSection video {
+  background-image: url(./assets/taste\ of\ africa\ logo.png);
+  background-size: 100%;
+  background-position: right 35% bottom 45%;
+  background-repeat: no-repeat;
+  height: 700px;
+  width: 1000px;
+  align-self: center;
+  margin: 15px 0;
+}
+
+
+/* KEYFRAME ANIMATIONS */
+
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+/************ 
+Media Queries 
+*************/
+
+/* Media Query for Mobile Devices */
+/* @media (max-width: 480px) {} */
+/* Media Query for low resolution  Tablets, Ipads */
+/* @media (min-width: 481px) and (max-width: 767px) {} */
+/* Media Query for Tablets Ipads portrait mode */
+/* @media (min-width: 768px) and (max-width: 1024px) {} */
+/* Media Query for Laptops and Desktops */
+/* @media (min-width: 1025px) and (max-width: 1280px) {} */
+/* Media Query for Large screens */
+/* @media (min-width: 1281px) {} */
+
+/********** Mobile Devices - Phones + low resolution Tablets + iPad **********/
+
+@media only screen and (max-width: 767px) { 
+  
+  /* MOBILE NAVIGATION */
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: start;
+    top: 55px;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - 55px);
+    transform: translate(-101%);
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    padding: 15px;
+  }
+  
+  .navbar li:first-child {
+    margin-top: 50px;
+  }
+  
+  .navbar li a {
+    font-size: 1.5rem;
+  }
+   
+  .menu-toggle, .bar {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+  transform: translate(0%)!important;
+  }
+  
+  /* SEARCH DISABLED ON MOBILE */
+
+  #search-icon {
+    display: none;
+  }
+  
+  .search-input {
+  display: none;
+ } 
+
+  /* MAIN SECTION */
+
+  main {
+    height: 450px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./assets/image1.jpeg);
+  }
+  .mainSection {
+    margin: 0 0 0 45px;
+    padding-top: 60px;
+  }
+  .mainSection h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-right: 80px;
+    line-height: 40px;
+  }
+  /* SEARCH FORM */
+  form input  {
+    width: 50%;
+  }
+  .mainSection ul li {
+    display: flex;
+    margin-right: 20px;
+    font-size: 1rem;
+  }
+
+  /* ABOUT SECTION */
+
+  .aboutSection {
+    height: 670px;
+    padding: 20px 0 0 45px;
+  }
+  .aboutSection h2 {
+    font-size: 2.5rem;
+    padding: 10px 60px 10px 0;
+  }
+  .aboutSection p {
+    line-height: 20px;
+    padding-right: 25px;
+  }
+  .aboutSection .click-buttons {
+    margin-top: 20px;
+  }
+  /* CUISINE SECTION */
+
+  .cuisineSection {
+    height: 2700px;
+    padding: 30px 0;
+  }
+  .cuisineSection h2 {
+    font-size: 2.5rem;
+    padding: 0 20px;
+  }
+  .cuisineNav li {
+    padding: 10px;
+    font-size: 1rem; 
+  }
+  .fourCuisine,
+  .fourCuisine2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .fourCuisine {
+    padding-bottom: 10px;
+  }
+  .cuisineFood img {
+    height: 300px;
+    width: 350px;
+    padding: 5px 0;
+    align-self: center;
+  }
+  /* OPENING SECTION */
+
+  .openingSection {
+    height: 500px;
+  }
+  .hours div {
+    padding: 10px 25px;
+  }
+  .openingSection video {
+    height: 400px;
+    width: 350px;
+  }
+  
+  /* TESTIMONIALS SECTION */
+  .testimonials {
+    height: 750px;
+  }
+  .testimonials p {
+    padding: 10px 35px 20px 35px;
+  }
+}
+
+/* Tablets Ipads portrait mode */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){  
+
+  /* MAIN SECTION */
+
+  main {
+    height: 400px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./assets/image1.jpeg);
+  }
+  .mainSection {
+    margin: 0 0 0 50px;
+    padding-top: 50px;
+  }
+  .mainSection h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-right: 20px;
+    line-height: 40px;
+  }
+
+  /* SEARCH FORM */
+  form input  {
+    width: 50%;
+  }
+  .mainSection ul li {
+    display: flex;
+    margin-right: 25px;
+    font-size: 1rem;
+  }
+  .fa-brands {
+    color: rgb(239, 142, 52);
+  }
+
+  /* ABOUT SECTION */
+
+  .aboutSection {
+    height: 380px;
+    padding: 30px 20px 0 50px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(./assets/amala-cover.png);
+  }
+  .aboutSection h3 {
+    padding: 20px 0 10px 0;
+    color: rgb(239, 142, 52);
+  }
+  .aboutSection p {
+    padding: 10px 20px 0 0;
+    line-height: 18px;
+  }
+  .aboutSection .click-buttons {
+    margin-top: 10px;
+  }
+  /* CUISINE SECTION */
+
+  .cuisineSection {
+    height: 650px;
+    padding: 30px 0;
+  }
+  .cuisineSection h2 {
+    font-size: 2.8rem;
+  }
+  .cuisineNav li {
+    padding: 15px;
+    font-size: 2rem; 
+  }
+  .fourCuisine,
+  .fourCuisine2 {
+    flex-direction: row;
+    align-items: center;
+  }
+  .fourCuisine {
+    padding-bottom: 10px;
+  }
+  .cuisineFood img {
+    height: 180px;
+    width: 190px;
+    padding: 0 8px;
+    align-self: center;
+  }
+  /* OPENING SECTION */
+
+  .openingSection {
+    height: 700px;
+  }
+  .hours div {
+    padding: 10px 60px;
+  }
+  .openingSection video {
+    height: 500px;
+    width: 700px;
+    padding: 0 0 15px 0;
+  }
+  
+  /* TESTIMONIALS SECTION */
+  .testimonials {
+    height: 600px;
+  }
+  .testimonials p {
+    padding: 10px 45px 40px 45px;
+  }
+}
+
+/* Media Query for iPad Pro and Laptops */
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+   /* MAIN SECTION */
+
+   main {
+    height: 400px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./assets/image1.jpeg);
+  }
+  .mainSection {
+    margin: 0 0 0 50px;
+    padding-top: 50px;
+  }
+  .mainSection h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-right: 0;
+    line-height: 40px;
+  }
+  form input  {
+    width: 50%;
+  }
+  .mainSection ul li {
+    display: flex;
+    margin-right: 25px;
+    font-size: 1rem;
+  }
+  .fa-brands {
+    color: rgb(239, 142, 52);
+  }
+
+  /* ABOUT SECTION */
+
+  .aboutSection {
+    height: 350px;
+    padding: 30px 20px 0 50px;
+  }
+  .aboutSection h3 {
+    padding: 20px 0 10px 0;
+    color: rgb(239, 142, 52);
+  }
+  .aboutSection p {
+    padding: 10px 20px 0 0;
+    line-height: 18px;
+  }
+  .aboutSection .click-buttons {
+    margin-top: 10px;
+  }
+  /* CUISINE SECTION */
+
+  .cuisineSection {
+    height: 700px;
+    padding: 30px 0;
+  }
+  .cuisineSection h2 {
+    font-size: 2.8rem;
+  }
+  .cuisineNav li {
+    padding: 15px;
+    font-size: 1rem; 
+  }
+  .fourCuisine,
+  .fourCuisine2 {
+    flex-direction: row;
+    align-items: center;
+  }
+  .fourCuisine {
+    padding-bottom: 5px;
+  }
+  .cuisineFood img {
+    height: 200px;
+    width: 250px;
+    padding: 5px 5px;
+    align-self: center;
+  }
+  /* OPENING SECTION */
+
+  .openingSection {
+    height: 800px;
+  }
+  .hours div {
+    padding: 10px 100px;
+  }
+  .openingSection video {
+    height: 500px;
+    width: 750px;
+  }
+  
+  /* TESTIMONIALS SECTION */
+  .testimonials {
+    height: 600px;
+  }
+  .testimonials p {
+    padding: 10px 35px 20px 35px;
+  }
+}
