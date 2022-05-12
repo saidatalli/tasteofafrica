@@ -374,8 +374,12 @@ main {
 }
 
 /* SEARCH FORM */
+form {
+  display: flex;
+  justify-content: flex-start;
+}
 form input {
-  height: 40px;
+  height: 48px;
   width: 20%;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
@@ -386,6 +390,7 @@ button {
   color: black;
   padding: 10px 10px;
   font-size: 1.5rem;
+  height: 50px;
 }
 .click-buttons {
   background: rgb(239, 142, 52);
@@ -400,7 +405,7 @@ button {
 }
 .aboutSection .click-buttons,
 .cuisineSection .click-buttons {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 #cuisineDiv .click-buttons {
   align-self: center;
@@ -728,7 +733,7 @@ Media Queries
     padding: 0 8px;
     align-self: center;
   }
-  
+
   /* OPENING SECTION */
 
   .openingSection {
