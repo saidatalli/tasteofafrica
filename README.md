@@ -19,11 +19,13 @@ I spent so much things like header, pic gallery, etc. Next time, I would love to
 
 I learnt to write more pseudo codes before I start coding and/or deisgning so that I have a clear idea of the final website.
 
-
-## Examples:
-Take a look at another example that I have in my own portfolio:
+## My other projects:
+Take a look at other projects that I have in my porfolio:
 
 **Halal Meals:** https://github.com/saidatalli/halalmeals
 
+**Ewatomi Beauty Salon:** https://github.com/saidatalli/ewatomibeautysalon
+
+**Sunshine Nursery:** https://github.com/saidatalli/sunshinenursery
 
 
