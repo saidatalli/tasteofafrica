@@ -13,7 +13,7 @@ I designed the website with HTML and vanilla CSS. I used display flex mainly for
 
 ## Optimizations
 
-I spent so much things like header, pic gallery, etc. Next time, I would love to use react or other framework to speed up the development process. I would also love to add scrollable slides on the cuisine section instead of a static gallery for the foods.
+I spent so much time on things like header, pic gallery, etc. Next time, I would love to use react or other framework to speed up the development process. I would also love to add scrollable slides on the cuisine section instead of a static gallery for the foods.
 
 ## Lessons Learned:
 
